@@ -1,0 +1,70 @@
+package advance;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+public class SPIKES {
+	static int[] xValues = { -1, 1, 0, 0 };
+	static int[] yValues = { 0, 0, -1, 1 };
+	static int[][] visited_go = new int[41][41];
+	static int[][] visited_out = new int[41][41];
+	static int flag = 0;
+	static int nSpike=0;
+
+	static void solution(int x, int y, int count, int direction, int[][] map) {
+
+		if (count > nSpike) {
+			return;
+		}
+		
+		if (direction == 1) {
+			visited_go[x][y] = 1;
+		} else {
+			visited_out[x][y] = 1;
+		}
+		
+		if(map[x][y]=='x'&&direction==1) {
+			solution(x, y, count, nSpike, direction, map);
+		}
+	}
+
+	public static void main(String[] args) throws FileNotFoundException {
+		// TODO Auto-generated method stub
+		System.setIn(new FileInputStream("F:\\InternshipSVMC\\InternshipSVMC\\src\\advance\\Bai SPIKES"));
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		int m = sc.nextInt();
+		 nSpike = sc.nextInt();
+		sc.nextLine();
+		sc.nextLine();
+		char[][] map = new char[n][m];
+		int startX = 0;
+		int startY = 0;
+
+		System.out.println(n + " " + m + " " + nSpike);
+		for (int i = 0; i < n; i++) {
+			String s = sc.nextLine();
+			for (int j = 0; j < m; j++) {
+				map[i][j] = s.charAt(j);
+				if (map[i][j] == '@') {
+					startX = i;
+					startY = j;
+				}
+			}
+			if (i < n - 1) {
+				sc.nextLine();
+			}
+
+		}
+
+		for (int i = 0; i < n; i++) {
+			for (int j = 0; j < m; j++) {
+				System.out.print(map[i][j] + " ");
+			}
+			System.out.println();
+		}
+
+	}
+
+}

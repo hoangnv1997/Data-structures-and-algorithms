@@ -1,0 +1,18 @@
+1583245585878	Rename package 'bai1'
+1583345307318	Convert local variable 'sc' to field
+1583345342276	Convert local variable 'sc' to field
+1583345393133	Convert local variable 'sc' to field
+1583569835805	Convert local variable 'sc' to field
+1583569853580	Convert local variable 'sc' to field
+1583570000402	Convert local variable 'sc' to field
+1583579418660	Convert local variable 'sc' to field
+1583579891786	Rename type 'PrimeGenerator'
+1583579909721	Rename type 'TransformTheExpression'
+1583579931659	Rename type 'DivisorSummation'
+1583579953999	Rename type 'StreetParade'
+1583601081669	Convert local variable 'sc' to field
+1583601350033	Rename type 'APrimeGenerator'
+1583601365017	Rename type 'BTransformTheExpression'
+1583601380943	Rename type 'CDivisorSummation'
+1583601394609	Rename type 'DStreetParade'
+1583601404832	Rename type 'EToAndFro'

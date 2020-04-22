@@ -1,0 +1,90 @@
+package advance;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+public class ALLIZWEL {
+	static class Stack {
+		private Point[] stack;
+		private int top;
+		private int size;
+
+		public Stack(int leng) {
+			size = leng;
+			top = -1;
+			stack = new Point[size];
+		}
+
+		public boolean isEmpty() {
+			if (top == -1) {
+				return true;
+			} else {
+				return false;
+			}
+		}
+
+		public void push(Point item) {
+			top++;
+			stack[top] = item;
+		}
+
+		public Point peek() {
+			return stack[top];
+		}
+
+		public void pop() {
+			// stack[top] = 0;
+			top--;
+		}
+	}
+
+	static class Point {
+		private int x;
+		private int y;
+
+		public Point(int x, int y) {
+			this.x = x;
+			this.y = y;
+		}
+	}
+
+	static int[] xValues = { -1, 1, 0, 0, -1, 1, -1, 1 };
+	static int[] yValues = { 0, 0, -1, 1, -1, -1, 1, 1 };
+
+	public static void main(String[] args) throws FileNotFoundException {
+		// TODO Auto-generated method stub
+		System.setIn(new FileInputStream("F:\\InternshipSVMC\\InternshipSVMC\\src\\advance\\Bai ALLIZWEL"));
+		Scanner sc = new Scanner(System.in);
+		int tc = sc.nextInt();
+		sc.nextLine();
+		while (tc-- > 0) {
+			int r = sc.nextInt();
+			int c = sc.nextInt();
+			sc.nextLine();
+			char[][] input = new char[r][c];
+			int[][] mark = new int[r][c];
+			Stack st = new Stack(15);
+			for (int i = 0; i < r; i++) {
+				String s = sc.nextLine();
+				for (int j = 0; j < c; j++) {
+					input[i][j] = s.charAt(j);
+					if (input[i][j] == 'A') {
+						st.push(new Point(i, j));
+						mark[i][j] = 1;
+					}
+				}
+			}
+
+			for (int i = 0; i < r; i++) {
+				for (int j = 0; j < c; j++) {
+					System.out.print(input[i][j] + " ");
+				}
+				System.out.println();
+			}
+			System.out.println();
+		}
+
+	}
+
+}

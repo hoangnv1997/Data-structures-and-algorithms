@@ -1,0 +1,36 @@
+package advance;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.util.Scanner;
+
+public class SPIKES {
+
+	public static void main(String[] args) throws FileNotFoundException {
+		// TODO Auto-generated method stub
+		System.setIn(new FileInputStream("F:\\InternshipSVMC\\InternshipSVMC\\src\\advance\\Bai SPIKES"));
+		Scanner sc = new Scanner(System.in);
+		int n = sc.nextInt();
+		int m = sc.nextInt();
+		int nSpike = sc.nextInt();
+		sc.nextLine();
+		char[][] map = new char[n][m];
+		
+		System.out.print(n+" "+m+" "+nSpike);
+		for(int i=0; i<n; i++) {
+			String s = sc.nextLine();
+			for(int j=0; j<m; j++) {
+				map[i][j]= s.charAt(j);
+			}
+		}
+		
+		for(int i=0; i<n; i++) {
+			for(int j=0; j<m; j++) {
+				System.out.print(map[i][j]+" ");
+			}
+			System.out.println();
+		}
+
+	}
+
+}
